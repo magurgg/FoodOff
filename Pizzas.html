@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<title>Food off | Pizzas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CSS/style.css">
+<link rel="stylesheet" href="CSS/mycss.css">
+
+<body> 
+    <script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<script type="text/javascript" src="js/gallery.js"></script>
+<div class="w3-top w3-hide-small topnav">
+  <div class="w3-bar w3-xlarge w3-black" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button"><img src="Logos/logo.png" style="height:28px;width:28px"></a>
+    <div class="dropdown">
+        <button class="w3-button navlist">MENÚ</button>
+        <div class="dropdown-content">
+            <a href="Pizzas.html">Pizzas</a>
+            <a href="Hamburguesas.html">Hamburguesas</a>
+            <a href="Postres.html">Postres</a>
+            <a href="Sushi.html">Sushi</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="w3-button navlist">RESTAURANTES</button>
+        <div class="dropdown-content">
+            <a href="Lockers.html">Lockers</a>
+            <a href="Modelo.html">Modelo</a>
+            <a href="Gorditas.html">Gorditas Doña Tota</a>
+            <a href="Volada.html">D' Volada</a>
+        </div>
+    </div>
+    <a href="index.html#about"><button class="w3-button navlist">ACERCA</button></a>
+    <a href="index.html#CON"><button class="w3-button navlist">CONTACTO</button></a>
+    <a href="Registro.html"><span class="w3-right w3-button w3-red w3-round" style="font-family:Negrita;font-size:20px;float:right;margin-right:10px;margin-top:3px;">Registrarse</span></a>
+    <a href="LogIn.html"><span class="w3-right w3-button w3-white w3-round" style="font-family:Negrita;font-size:20px;float:right;margin-right:10px;margin-top:3px;">Iniciar sesión</span></a>
+  </div>
+</div>
+  
+
+<div class="w3-container w3-padding-64 w3-white w3-xlarge" id="about">
+  <div class="w3-content">
+      <div class="w3-center">
+          <img src="Imagenes/Banners/pizza.png" style="width:800px;">
+      </div>
+      <hr>
+      <h1><b>Pizza</b> <img src="Logos/lockers2.png" style="width:100px;"><a href="Ordenar.html"><span class="w3-right w3-button w3-red w3-round" style="font-size:12px;">Añadir a la orden</span></a><span class="w3-right w3-tag w3-dark-grey w3-round" style="font-size:22px">$160</span></h1>
+      <div class="image">
+        <img src="Comida/Lockers/pizza.jpg" style="width:220px;float:left;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+      </div><br><br>
+      <p class="w3-text-grey" style="font-size:20px;text-indent:30px;">Pizza de pepperonni y carnes frías.</p><br><br>
+      <div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="Comida/Lockers/pizzaw.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="Comida/Lockers/pizza1w.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="Comida/Lockers/pizza2w.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="Comida/Lockers/pizza3w.jpg" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Comida/Lockers/pizzaw.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pizza Carnes Frias">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Comida/Lockers/pizza1w.jpg" style="width:100%" onclick="currentSlide(2)" alt="Hasta Rellena de Queso!">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Comida/Lockers/pizza2w.jpg" style="width:100%" onclick="currentSlide(3)" alt="Hecha en Casa!">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Comida/Lockers/pizza3w.jpg" style="width:100%" onclick="currentSlide(4)" alt="Recien Horneada!">
+    </div>
+  </div>
+</div>
+      <hr>
+      <h1><b>Deep Deep Dish Pizza</b><img src="Logos/little.png" style="width:80px;">
+      <a href="Ordenar.html"><span class="w3-right w3-button w3-red w3-round" style="font-size:12px;">Añadir a la orden</span></a><span class="w3-right w3-tag w3-dark-grey w3-round" style="font-size:22px">$120</span></h1>
+      <div class="image">
+        <img src="Comida/Caesars/deepdeep.jpg" style="width:250px;float:left;padding-right:30px;">
+      </div><br>
+      <p class="w3-text-grey" style="font-size:20px">Preparada con aceite de oliva y extractos de ajo, crocante en la base y suave por dentro.</p><br>
+  </div>
+</div>
+    
+<footer class="w3-center w3-black w3-padding-48 w3-large">
+    <img src="Logos/logo.png" style="height:120px;width:120px">
+    <p>Neonsoft 2017</p>
+</footer>
+
+</body>
+</html>
